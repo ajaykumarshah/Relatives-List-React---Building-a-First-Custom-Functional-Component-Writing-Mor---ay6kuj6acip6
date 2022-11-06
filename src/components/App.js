@@ -1,12 +1,19 @@
-import React, {Component, useState} from "react";
+import React, { Component, useState } from "react";
 import '../styles/App.css';
 
 class App extends Component {
     render() {
+        let relatives = ["singrauli", "bhopal", "indore", "jabalpur"];
+        let relatives_with_list = relatives.map((relative, index) => {
 
-        return(
+            return <li key={`relativeListItem${index + 1}`}> {relative} </li>
+        })
+        return (
             <div id="main">
-               {/* Do not remove the main div */}
+
+                <ol key="relativeList">
+                    {relatives_with_list}
+                </ol>
             </div>
         )
     }
